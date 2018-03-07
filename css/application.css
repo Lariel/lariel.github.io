@@ -1,0 +1,23 @@
+#main{ /* div ID */
+	background: gray;
+	border: 5px solid black;
+	padding: 20px;
+	margin: auto;
+	width: 1000px;
+}
+
+#main h1#title{ /* div ID */
+	color: green;
+}
+
+#changeBlueLink{
+	color: blue;
+}
+
+.special{ /* div CLASS*/ 
+	color: #fb3737;	
+}
+
+.blueColor{
+	color: blue;
+}
