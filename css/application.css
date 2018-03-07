@@ -1,23 +1,37 @@
+html,
+body {
+   margin:0;
+   padding:0;
+   height:100%;
+}
+
 #main{ /* div ID */
+	min-height:100%;
+	position:relative;
 	background: gray;
-	border: 5px solid black;
-	padding: 20px;
 	margin: auto;
-	width: 1000px;
+	width: auto;
+	height: 1020px;
 }
 
-#main h1#title{ /* div ID */
-	color: green;
+#header{
+	background: #2F4F4F;
+	color: white;
+	margin: auto;
+	width: 100%;
+	height: 50px;
 }
 
-#changeBlueLink{
-	color: blue;
+#body{
+	padding:10px;
+	padding-bottom:60px;   /* Height of the footer */
 }
 
-.special{ /* div CLASS*/ 
-	color: #fb3737;	
-}
-
-.blueColor{
-	color: blue;
+#footer{
+	background: #2F4F4F;
+	margin: auto;
+	width: 100%;
+	height: 100px;
+	position:absolute;
+	bottom:0;
 }
