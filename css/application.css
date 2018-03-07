@@ -8,17 +8,18 @@ body {
 #main{ /* div ID */
 	min-height:100%;
 	position:relative;
-	background: gray;
+	background: white;
 	margin: auto;
 	width: auto;
 }
 
 #header{
-	background: #2F4F4F;
+	background: #008A79;
 	color: white;
 	margin: auto;
 	width: 100%;
 	height: 50px;
+	box-shadow: 0px 3px 5px grey;
 }
 
 #body{
@@ -27,10 +28,11 @@ body {
 }
 
 #footer{
-	background: #2F4F4F;
+	background: #002B36;
 	margin: auto;
 	width: 100%;
 	height: 100px;
 	position:absolute;
 	bottom:0;
+	box-shadow: 0px -3px 5px gray;
 }
