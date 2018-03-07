@@ -1,32 +1,47 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-	<head>
-		<meta charset="UTF-8">
-		<title>My Home Page</title>
-		<link rel="stylesheet" href="css/application.css" type="text/css" media="screen" charset="UTF-8">
-		<script src="js/jquery-3.3.1.js" type="text/javascript" charset="UTF-8"></script>
-		<script src="js/application.js" type="text/javascript" charset="UTF-8"></script>
-		
-	</head>
+html,
+body {
+   margin:0;
+   padding:0;
+   height:100%;
+}
 
-	<body>
+#main{ /* div ID */
+	min-height:100%;
+	position:relative;
+	background: white;
+	margin: auto;
+	width: auto;
+}
 
-		<div id="main">
-			<div id="header">
-			
-			</div>
+#header{
+	background: #008A79;
+	color: white;
+	margin: auto;
+	width: 100%;
+	height: 50px;
+	position: fixed;
+	box-shadow: 0 2px 5px rgba(0,0,0,.26);
+}
 
-			<div id="body">
-				
-			</div>
+#body{
+	padding:10px;
+	padding-bottom:100px;   /* Height of the footer */
+}
 
-			<div id="footer">
-				<div class="center">
-					Lariel Negreiros dos Santos
-				</div>
-			</div>
+#footer{
+	background: #002E33;
+	margin: auto;
+	width: 100%;
+	height: 100px;
+	position:absolute;
+	bottom:0;
+	/*box-shadow: 0px -3px 5px gray; */
 
-		</div>
+	color: #008A79;
+	font-family: sans-serif;
+}
 
-	</body>
-</html>
+.center { /*text align config */
+    text-align: center;
+    padding: 40px;
+}
