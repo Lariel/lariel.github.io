@@ -4,11 +4,11 @@ body {
    padding:0;
    height:100%;
 }
-
+/*IDs*/
 #main{ /* div ID */
 	min-height:100%;
 	position:relative;
-	background: white;
+	/*background: white;*/
 	margin: auto;
 	width: auto;
 }
@@ -24,9 +24,24 @@ body {
 }
 
 #body{
-	padding:10px;
+	padding:50px;	/* Height of the header */
 	padding-bottom:100px;   /* Height of the footer */
 }
+
+
+#area1{
+	background-color: tomato;
+    color: white;
+    padding: 10px;
+}
+
+
+#area2{
+	background: #002E33;
+	color: white;
+    padding: 10px;
+}
+
 
 #footer{
 	background: #002E33;
@@ -41,6 +56,8 @@ body {
 	font-family: sans-serif;
 }
 
+
+/*Classes*/
 .center { /*text align config */
     text-align: center;
     padding: 40px;
