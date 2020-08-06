@@ -149,6 +149,10 @@ footer {
 }
 
 @media only screen and (max-width: 414px) { 
+	h1 {
+		font-size: 2em;
+	}
+
 	footer {
 		background: #002E33;
 		margin: auto;
