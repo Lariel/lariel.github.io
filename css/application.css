@@ -1,51 +1,143 @@
-html,
-body {
-   margin:0;
-   padding:0;
-   height:100%;
+* {
+	margin: 0;
+	padding: 0;
 }
 
-header{
+html { 
+	
+}
+
+body {
+	display: flex;
+	justify-content: center; /* horizontal*/
+	align-items: center; /* vertical*/
+	min-height: 100vh;
+	font-family: monospace;
+}
+
+ul {
+	position: relative;
+	display: flex;
+}
+
+ul li {
+	position: relative;
+	list-style: none;
+	margin: 0 20px;
+	cursor: pointer;
+}
+
+ul li a {
+	text-decoration: none;
+}
+
+ul li a .fa {
+	font-size: 3em;
+	color: #002E33;
+}
+
+ul li::before {
+	font-family: fontAwesome;
+	position: absolute;
+	top: 0;
+	left: 0;
+	font-size: 3em;
+	height: 0;
+	overflow: hidden;
+	transition: 0.5s ease-in-out;
+}
+
+ul li:hover::before {
+	height: 100%;
+}
+
+/*LinkedIn*/
+ul li:nth-child(1)::before {
+	content: '\f08c';
+	color: #0077b5;
+	border-bottom: 2px solid #0077b5;
+}
+/*StackOverflow*/
+ul li:nth-child(2)::before {
+	content: '\f16c';
+	color: #f48024;
+	border-bottom: 2px solid #f48024;
+}
+/*GitHub*/
+ul li:nth-child(3)::before {
+	content: '\f09b';
+	color: #000;
+	border-bottom: 2px solid #000;
+}
+/*WhatsApp*/
+ul li:nth-child(4)::before {
+	content: '\f232';
+	color: #25d366;
+	border-bottom: 2px solid #25d366;
+}
+/*Gmail*/
+ul li:nth-child(5)::before {
+	content: '\f003';
+	color: #ce1500;
+	border-bottom: 2px solid #ce1500;
+}
+
+header {
 	background: #008A79;
-	color: white;
 	margin: auto;
 	width: 100%;
 	height: 50px;
 	position: fixed;
+	top: 0;
 	box-shadow: 0 2px 5px rgba(0,0,0,.26);
+	color: white;
 }
 
-main{
-
+main {
+	position: relative;
 }
 
-footer{
+footer {
 	background: #002E33;
 	margin: auto;
 	width: 100%;
 	height: 100px;
-	position:absolute;
-	bottom:0;
+	position: fixed;
+	bottom: 0;
 	/*box-shadow: 0px -3px 5px gray; */
-
-	color: #008A79;
-	font-family: sans-serif;
 }
-
-
-/*IDs*/
-#main{ /* div ID */
-	min-height:100%;
-	position:relative;
-	/*background: white;*/
-	margin: auto;
-	width: auto;
-}
-
-
 
 /*Classes*/
-.center { /*text align config */
+.conteudo {
+	max-width: 100%;
+}
+.contato h1 {
+	padding-bottom: 10px;
+	font-size: 1.5em;
+}
+
+.info-made-by { /*text align config */
     text-align: center;
-    padding: 40px;
+	padding: 40px;
+	color: #008A79;
+	font-size: 15px;
+}
+
+@media only screen and (max-width: 411px) { 
+	footer {
+		background: #002E33;
+		margin: auto;
+		width: 100%;
+		height: 80px;
+		position: fixed;
+		bottom:0;
+		/*box-shadow: 0px -3px 5px gray; */
+	}
+
+	.info-made-by { /*text align config */
+		text-align: center;
+		padding: 30px;
+		color: #008A79;
+		font-size: 20px;
+	}
 }
