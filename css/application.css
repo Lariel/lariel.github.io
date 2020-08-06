@@ -24,11 +24,13 @@ h2 {
 }
 
 ul {
+	width: 100%;
 	position: relative;
-	display: flex;
+	text-align:center;
 }
 
 ul li {
+	display:inline-block;
 	position: relative;
 	list-style: none;
 	margin: 0 20px;
@@ -169,11 +171,27 @@ footer {
 		color: #008A79;
 	}
 
-	ul {
-		flex-direction: column;
+	ul li {
+		display:inline-block;
+		position: relative;
+		list-style: none;
+		margin: 0 10px;
+		cursor: pointer;
 	}
 
-	ul li {
-		margin: 10px 0;
+	ul li a .fa {
+		font-size: 2em;
+		color: #002E33;
+	}
+	
+	ul li::before {
+		font-family: fontAwesome;
+		position: absolute;
+		top: 0;
+		left: 0;
+		font-size: 2em;
+		height: 0;
+		overflow: hidden;
+		transition: 0.5s ease-in-out;
 	}
 }
