@@ -140,4 +140,12 @@ footer {
 		color: #008A79;
 		font-size: 20px;
 	}
+
+	ul {
+		flex-direction: column;
+	}
+
+	ul li {
+		margin: 10px 0;
+	}
 }
