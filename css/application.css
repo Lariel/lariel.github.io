@@ -136,7 +136,7 @@ footer {
 
 	.info-made-by { /*text align config */
 		text-align: center;
-		padding: 30px;
+		padding: 30px 20px;
 		color: #008A79;
 		font-size: 20px;
 	}
