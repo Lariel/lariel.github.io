@@ -188,7 +188,7 @@ footer {
 	ul li::before {
 		font-family: fontAwesome;
 		position: absolute;
-		top: 0;
+		bottom: -2px;
 		left: 0;
 		font-size: 2em;
 		height: 0;
@@ -247,7 +247,7 @@ footer {
 	ul li::before {
 		font-family: fontAwesome;
 		position: absolute;
-		top: 0;
+		bottom: -2px;
 		left: 0;
 		font-size: 2em;
 		height: 0;
