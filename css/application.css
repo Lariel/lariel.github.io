@@ -59,6 +59,7 @@ ul li::before {
 
 ul li:hover::before {
 	height: 100%;
+	pointer-events: none;
 }
 
 /*LinkedIn*/
