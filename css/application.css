@@ -225,6 +225,11 @@ footer {
 		/*box-shadow: 0px -3px 5px gray; */
 	}
 
+	.content {
+		height: calc(100vh - 80px);
+		overflow-y: scroll;
+	}
+
 	.info-made-by { /*text align config */
 		text-align: center;
 		padding: 30px 0;
@@ -232,34 +237,37 @@ footer {
 	}
 
 	ul li {
-		display:inline-block;
+		display:block;
 		position: relative;
 		list-style: none;
-		margin: 0 10px;
+		margin: 10px;
 		cursor: pointer;
 	}
 
 	ul li a .fa {
-		font-size: 2em;
+		font-size: 2.5em;
 		color: #002E33;
 	}
 	
 	ul li::before {
-		font-family: fontAwesome;
+		/* font-family: fontAwesome;
 		position: absolute;
 		bottom: -2px;
 		left: 0;
 		font-size: 2em;
 		height: 0;
 		overflow: hidden;
-		transition: 0.5s ease-in-out;
+		transition: 0.5s ease-in-out; */
+		display: none;
 	}
 
 	.about {
 		margin: 0 10px 50px 10px;
+		text-align: center;
 	}
 
 	.contact {
 		margin: 0 10px 50px 10px;
+		text-align: center;
 	}
 }
