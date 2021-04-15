@@ -26,3 +26,6 @@
 	}, 500);
 })();
 
+function setGmailVisited(a) {
+	a.childNodes[0].style = 'color: #ce1500;'
+}

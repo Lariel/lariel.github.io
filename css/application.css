@@ -250,15 +250,20 @@ footer {
 	}
 	
 	ul li::before {
-		/* font-family: fontAwesome;
-		position: absolute;
-		bottom: -2px;
-		left: 0;
-		font-size: 2em;
-		height: 0;
-		overflow: hidden;
-		transition: 0.5s ease-in-out; */
 		display: none;
+	}
+
+	ul li:nth-child(1) a:visited ::before {
+		color: #0077b5;
+	}
+	ul li:nth-child(2) a:visited ::before {
+		color: #f48024;
+	}
+	ul li:nth-child(3) a:visited ::before {
+		color: #000;
+	}
+	ul li:nth-child(4) a:visited ::before {
+		color: #25d366;
 	}
 
 	.welcome {
