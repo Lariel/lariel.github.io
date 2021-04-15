@@ -24,8 +24,14 @@
 	setInterval(() => {
 		cursor.style.visibility = cursor.style.visibility ? '' : 'hidden';
 	}, 500);
+
+	versionControl();
 })();
 
 function setGmailVisited(a) {
 	a.childNodes[0].style = 'color: #ce1500;'
+}
+
+function versionControl() {
+	document.getElementById('version').textContent = 'v.15.04.2021 10:45';
 }
