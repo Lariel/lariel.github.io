@@ -33,5 +33,5 @@ function setGmailVisited(a) {
 }
 
 function versionControl() {
-	document.getElementById('version').textContent = 'v.15.04.2021 16:30';
+	document.getElementById('version').textContent = 'v.20.05.2021 10:52';
 }
