@@ -80,14 +80,15 @@ ul li:nth-child(3)::before {
 	color: #000;
 	border-bottom: 2px solid #000;
 }
-/*WhatsApp*/
+/*WhatsApp
 ul li:nth-child(4)::before {
 	content: '\f232';
 	color: #25d366;
 	border-bottom: 2px solid #25d366;
 }
+*/
 /*Gmail*/
-ul li:nth-child(5)::before {
+ul li:nth-child(4)::before {
 	content: '\f003';
 	color: #ce1500;
 	border-bottom: 2px solid #ce1500;
