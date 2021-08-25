@@ -34,7 +34,7 @@ function setGmailVisited(a) {
 }
 
 function versionControl() {
-	document.getElementById('version').textContent = 'v.25.08.2021 19:17';
+	document.getElementById('version').textContent = 'v.25.08.2021 20:37';
 }
 
 function fetchRepos() {
@@ -42,7 +42,17 @@ function fetchRepos() {
 		new URLSearchParams({
 			sort: 'updated'
 		}))
-		.then(response => response.json().then(projects => showRepos(projects)));	
+		.then(response => {
+			if (response.status == 200) {
+				response.json().then(projects => showRepos(projects));
+			} else {
+				response.json().then(data => handleApiError(data));
+			}
+		});	
+}
+
+function handleApiError(data) {
+	alert(`${data.message}\n\nDocs: ${data.documentation_url}`);
 }
 
 function fetchRepoTopics(repoName, repoId) {

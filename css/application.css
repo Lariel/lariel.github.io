@@ -13,6 +13,7 @@ body {
 	align-items: center; /* vertical*/
 	min-height: 100vh;
 	font-family: monospace;
+	background: white;
 }
 
 h1 {
