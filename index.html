@@ -11,28 +11,31 @@
 
 	<!-- Compiled and minified CSS -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-	<link rel="stylesheet" href="css/application.css" type="text/css" media="screen" charset="UTF-8">
+	<link rel="stylesheet" href="css/application.css" type="text/css" media="screen">
+	<!--<link rel="stylesheet" href="css/spacing.css" type="text/css" media="screen">-->
+	<link rel="stylesheet" href="css/card.css" type="text/css" media="screen">
+	<link rel="stylesheet" href="css/tag.css" type="text/css" media="screen">
 
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-175060022-1"></script>
 	<script>
-	window.dataLayer = window.dataLayer || [];
-	function gtag(){dataLayer.push(arguments);}
-	gtag('js', new Date());
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
 
-	gtag('config', 'UA-175060022-1');
+		gtag('config', 'UA-175060022-1');
 	</script>
 
 </head>
 
 <body>
 	<section class="content">
-		<section class="welcome">
+		<section class="welcome" id="intro">
 			<h1>Lariel Negreiros dos Santos</h1>
 			<h2>Desenvolvedor de Sistemas Full Stack</h2>
 		</section>
 
-		<section class="contact">
+		<section class="contact" id="contato">
 			<h2>Fale comigo</h2>
 			<ul>
 				<li>
@@ -53,14 +56,60 @@
 			</ul>
 		</section>
 
-		<section class="about">
+		<section class="about" id="sobre">
 			<h2>Quem sou eu</h2>
 			<div>🚴🖖👨🏻‍💻🤘🔭🔥</div>
 		</section>
 
-		<section class="projects">
+		<section class="projects" id="projetos" title="Meus repositórios no Github">
 			<h2>Projetos</h2>
-			<i class="fa fa-cog fa-spin fa-1x fa-fw"></i>
+			<div id="loader">
+				<i class="fa fa-cog fa-spin fa-fw"></i>
+			</div>
+			<!--
+			<div class="card">
+				<div class="card-title">Teste 1</div>
+				<div class="card-body">
+					Aqui ficará algum texto decritivo
+				</div>
+				<div class="card-tags">
+					<div class="tag tag-info">
+						<span>front</span>
+					</div>
+					<div class="tag tag-success">
+						<span>back</span>
+					</div>
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-title">teste 2</div>
+				<div class="card-body">
+					<div class="tech front">
+						<span>front</span>
+					</div>
+					<div class="tech back">
+						<span>back</span>
+					</div>
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-title">teste 3</div>
+				<div class="card-body">
+					<div class="tech back">
+						<span>back</span>
+					</div>
+					<div class="tech front">
+						<span>front</span>
+					</div>
+					<div class="tech back">
+						<span>back</span>
+					</div>
+					<div class="tech front">
+						<span>front</span>
+					</div>
+				</div>
+			</div>
+			-->
 		</section>
 	</section>
 	
