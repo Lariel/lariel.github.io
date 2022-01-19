@@ -34,7 +34,7 @@ function setGmailVisited(a) {
 }
 
 function versionControl() {
-	document.getElementById('version').textContent = 'v.26.08.2021 01:00';
+	document.getElementById('version').textContent = 'v.19.01.2022 19:00';
 }
 
 function fetchRepos() {
@@ -92,9 +92,6 @@ function showRepos(projects) {
 
 		projetos.appendChild(divCard);
 
-		console.log('Nome: ', project.name);
-		console.log('Descrição', project.description);
-		console.log('Linguagem: ', project.language);
 		fetchRepoTopics(project.name, project.id);
 	}
 }

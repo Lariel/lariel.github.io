@@ -123,7 +123,11 @@ footer {
 
 /*Classes*/
 .content {
-	max-width: 80%;
+	padding-left: 10%;
+    padding-right: 10%;
+    height: calc(100vh - 98px);
+    overflow-y: scroll;
+	margin-top: -100px;
 }
 
 .welcome {
@@ -146,6 +150,10 @@ footer {
 .about div {
 	text-align: center;
     font-size: 2em;
+}
+
+.about div span {
+	cursor: help;
 }
 
 #loader {
@@ -190,7 +198,7 @@ footer {
 	}
 
 	.content {
-		max-width: 100%;
+		padding: 0;
 		height: calc(100vh - 60px);
 		overflow-y: scroll;
 		margin-top: -50px;
