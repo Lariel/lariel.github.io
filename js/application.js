@@ -34,7 +34,7 @@ function setGmailVisited(a) {
 }
 
 function versionControl() {
-	document.getElementById('version').textContent = 'v.19.01.2022 19:00';
+	document.getElementById('version').textContent = 'v.25.03.2022 10:30';
 }
 
 function fetchRepos() {
@@ -55,12 +55,11 @@ function handleApiError(data) {
 	alert(`${data.message}\n\nDocs: ${data.documentation_url}`);
 }
 
-function fetchRepoTopics(repoName, repoId) {
-	fetch(`https://api.github.com/repos/Lariel/${repoName}/topics`, 
+function fetchRepoTopics(repoName) {
+	return fetch(`https://api.github.com/repos/Lariel/${repoName}/topics`, 
 		{headers: {
 			'Accept': 'application/vnd.github.mercy-preview+json'
-		}}).then(response => response.json()
-			.then(topics => showProjectTopics(topics, repoId)));
+		}});
 }
 
 function hideLoader() {
@@ -74,10 +73,6 @@ function showRepos(projects) {
 	for (let project of projects) {
 		const divCard = document.createElement('div');
 		divCard.className = 'card';
-		divCard.title = 'Clique para ver o repositório no Github'
-		divCard.addEventListener('click', () => {
-			window.open(project.html_url, '_blank').focus();
-		});
 		divCard.id = project.id;
 		
 		const cardTitle = document.createElement('div');
@@ -92,7 +87,13 @@ function showRepos(projects) {
 
 		projetos.appendChild(divCard);
 
-		fetchRepoTopics(project.name, project.id);
+		fetchRepoTopics(project.name)
+		.then(response => response.json()
+		.then(topics => {
+			showProjectTopics(topics, project.id)
+			configCardFooter(project);
+		}));
+
 	}
 }
 
@@ -112,3 +113,41 @@ function showProjectTopics(topics, id) {
 		cardTags.appendChild(cardTag);
 	}
 }
+
+function configCardFooter(project) {
+	const divCard = document.getElementById(project.id);
+	const cardFooter = document.createElement('div');
+	cardFooter.className = 'card-footer';
+	cardFooter.id = `${'footer-'+project.id}`
+	divCard.appendChild(cardFooter);
+	configGithubLink(project);
+	configHomepageLink(project);
+}
+
+function configGithubLink(project) {
+	const cardFooter = document.getElementById('footer-'+project.id);
+	const githubLink = document.createElement('div');
+	githubLink.className = 'link fa fa-github mt-10';
+	githubLink.innerText = '  ver no Github';
+	githubLink.title = 'Clique para ver o repositório no Github'
+	githubLink.addEventListener('click', () => {
+		window.open(project.html_url, '_blank').focus();
+	});
+
+	cardFooter.appendChild(githubLink);
+}
+
+function configHomepageLink(project) {
+	if (project.homepage) {
+		const cardFooter = document.getElementById('footer-'+project.id);
+		const homepageLink = document.createElement('div');
+		homepageLink.className = 'link fa fa-external-link mt-10';
+		homepageLink.innerText = '  acessar projeto';
+		homepageLink.addEventListener('click', () => {
+			window.open(project.homepage, '_blank').focus();
+		});
+	
+		cardFooter.appendChild(homepageLink);
+	}
+}
+
