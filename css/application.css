@@ -69,14 +69,14 @@ ul li:nth-child(1)::before {
 	color: #0077b5;
 	border-bottom: 2px solid #0077b5;
 }
-/*StackOverflow*/
+/*StackOverflow
 ul li:nth-child(2)::before {
 	content: '\f16c';
 	color: #f48024;
 	border-bottom: 2px solid #f48024;
-}
+}*/
 /*GitHub*/
-ul li:nth-child(3)::before {
+ul li:nth-child(2)::before {
 	content: '\f09b';
 	color: #000;
 	border-bottom: 2px solid #000;
@@ -89,7 +89,7 @@ ul li:nth-child(4)::before {
 }
 */
 /*Gmail*/
-ul li:nth-child(4)::before {
+ul li:nth-child(3)::before {
 	content: '\f003';
 	color: #ce1500;
 	border-bottom: 2px solid #ce1500;
@@ -233,15 +233,15 @@ footer {
 	ul li:nth-child(1) a:visited ::before {
 		color: #0077b5;
 	}
-	ul li:nth-child(2) a:visited ::before {
+	/* ul li:nth-child(2) a:visited ::before {
 		color: #f48024;
-	}
-	ul li:nth-child(3) a:visited ::before {
+	} */
+	ul li:nth-child(2) a:visited ::before {
 		color: #000;
 	}
-	ul li:nth-child(4) a:visited ::before {
+	/* ul li:nth-child(4) a:visited ::before {
 		color: #25d366;
-	}
+	} */
 
 	.welcome {
 		margin-bottom: 30px;
