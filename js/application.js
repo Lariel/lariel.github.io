@@ -34,7 +34,7 @@ function setGmailVisited(a) {
 }
 
 function versionControl() {
-	document.getElementById('version').textContent = 'v.12.07.2022 01:30';
+	document.getElementById('version').textContent = 'v.03.03.2023 11:35';
 }
 
 function fetchRepos() {
