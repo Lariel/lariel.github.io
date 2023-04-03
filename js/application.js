@@ -108,10 +108,16 @@ function showProjectTopics(topics, id) {
 	for (let tag of tags) {
 
 		const cardTag = document.createElement('div');
-		cardTag.className = 'tag tag-success';
+		cardTag.className = 'tag tag-success searchable';
 		cardTag.innerText = tag;
+		cardTag.title = `Clique para pesquisar sobre ${tag} no Google`;
+		cardTag.addEventListener('click', () => clickHandler(cardTag))
 		cardTags.appendChild(cardTag);
 	}
+}
+
+function clickHandler(element) {
+	window.open(`https://www.google.com/search?q=${element.innerText}`, '_blank').focus();
 }
 
 function configCardFooter(project) {

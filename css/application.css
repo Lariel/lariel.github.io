@@ -127,6 +127,10 @@ footer {
 	text-decoration: underline dotted #002E33;
 }
 
+.searchable {
+	cursor: help;
+}
+
 .github-icon::before {
 	content: '\f09b';
 }
@@ -162,7 +166,7 @@ footer {
 }
 
 .about div span {
-	cursor: help;
+	cursor: wait;
 }
 
 #loader {
