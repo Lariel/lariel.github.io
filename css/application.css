@@ -148,12 +148,17 @@ footer {
 	margin-bottom: 50px;
 }
 
-.contact, .about {
+.contact, .about, .projects {
 	margin: 0 20px 50px 20px;
 }
 
-.projects {
-	margin: 0 20px 100px 20px;
+.project-list {
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	flex-wrap: wrap;
+	flex-direction: row;
+	margin: 0 20px;
 }
 
 .contact h2, .about h2, .projects h2 {
@@ -189,6 +194,18 @@ footer {
 	width: 99%;
 	font-size: 0.7em;
 	text-align: end;
+}
+
+@media (min-width: 794px) {
+	.name-medium {
+		display: none;
+	}
+}
+
+@media (max-width: 793px) {
+	.name-wide {
+		display: none;
+	}
 }
 
 @media (max-width: 485px) { 

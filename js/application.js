@@ -34,7 +34,7 @@ function setGmailVisited(a) {
 }
 
 function versionControl() {
-	document.getElementById('version').textContent = 'v.03.abr.2023 14:30';
+	document.getElementById('version').textContent = 'v.18.09.2023-21:00';
 }
 
 function fetchRepos() {
@@ -69,7 +69,7 @@ function hideLoader() {
 
 function showRepos(projects) {
 	hideLoader();
-	const projetos = document.getElementById('projetos');
+	const projetos = document.getElementById('project-list');
 	for (let project of projects) {
 		const divCard = document.createElement('div');
 		divCard.className = 'card';

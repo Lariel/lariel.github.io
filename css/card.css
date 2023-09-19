@@ -1,9 +1,8 @@
 .card {
-	display: inline-grid;
 	border: 1px solid #002E33;
     border-radius: 6px;
 	padding: 16px!important;
-	width: 25%;
+	width: 240px;
 	margin: 10px;
 	box-shadow: 2px 4px 9px rgba(199, 199, 199, 0.5);
 }
@@ -14,7 +13,7 @@
 }
 
 .card-title {
-    display: inline-flex;
+    display: block;
 	position: relative!important;
 	align-items: center!important;
 	font-size: 15px!important;
@@ -23,7 +22,7 @@
 }
 
 .card-body {
-	display: inline-flex;
+	display: block;
     margin-top: 8px!important;
 	margin-bottom: 16px!important;
 }
@@ -43,7 +42,5 @@
 }
 
 @media (max-width: 485px) { 
-	.card {
-		width: 85%;
-	}
+
 }
