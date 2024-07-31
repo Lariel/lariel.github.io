@@ -34,7 +34,9 @@ function setGmailVisited(a) {
 }
 
 function versionControl() {
-	document.getElementById('version').textContent = 'v.18.09.2023-21:00';
+	const updatedAt = new Date('07-30-2024 21:58')
+	console.log(`Atualizado em ${updatedAt}`);
+	document.getElementById('version').textContent = `v${updatedAt.getTime()}`;
 }
 
 function fetchRepos() {
