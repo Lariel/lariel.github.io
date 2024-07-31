@@ -34,7 +34,7 @@ function setGmailVisited(a) {
 }
 
 function versionControl() {
-	const updatedAt = new Date('07-30-2024 21:58')
+	const updatedAt = new Date('07-31-2024 10:15')
 	console.log(`Atualizado em ${updatedAt}`);
 	document.getElementById('version').textContent = `v${updatedAt.getTime()}`;
 }
