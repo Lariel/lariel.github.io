@@ -197,13 +197,13 @@ footer {
 }
 
 @media (min-width: 794px) {
-	.name-medium {
+	.title-medium {
 		display: none;
 	}
 }
 
 @media (max-width: 793px) {
-	.name-wide {
+	.title-wide {
 		display: none;
 	}
 }
