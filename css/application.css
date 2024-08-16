@@ -163,6 +163,7 @@ footer {
 
 .contact h2, .about h2, .projects h2 {
 	padding-bottom: 10px;
+	text-align: center;
 }
 
 .about div {
