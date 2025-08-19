@@ -30,6 +30,14 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Replace tokens in files
+        uses: cschleiden/replace-tokens@v1
+        with:
+          files: '["js/*.js"]'
+          tokens: |
+            {
+              "API_KEY": "${{ secrets.BEARER_REPOS }}"
+            }
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
