@@ -1,3 +1,10 @@
+const gitHeaders = {
+	headers: {
+		'Accept': 'application/vnd.github.mercy-preview+json',
+		'Authorization': 'API_KEY'
+	}	
+};
+
 (() => {
 	var typing = document.getElementById('typing'),
 		text = typing.textContent,
@@ -34,16 +41,16 @@ function setGmailVisited(a) {
 }
 
 function versionControl() {
-	const updatedAt = new Date('08-15-2024 22:00')
+	const updatedAt = new Date('08-19-2025 19:50')
 	console.log(`Atualizado em ${updatedAt}`);
 	document.getElementById('version').textContent = `v${updatedAt.getTime()}`;
 }
 
 function fetchRepos() {
-	fetch('https://api.github.com/users/lariel/repos?' + 
+	fetch('https://api.github.com/user/repos?' + 
 		new URLSearchParams({
 			sort: 'updated'
-		}))
+		}),gitHeaders)
 		.then(response => {
 			if (response.status == 200) {
 				response.json().then(projects => showRepos(projects));
@@ -57,13 +64,6 @@ function handleApiError(data) {
 	alert(`${data.message}\n\nDocs: ${data.documentation_url}`);
 }
 
-function fetchRepoTopics(repoName) {
-	return fetch(`https://api.github.com/repos/Lariel/${repoName}/topics`, 
-		{headers: {
-			'Accept': 'application/vnd.github.mercy-preview+json'
-		}});
-}
-
 function hideLoader() {
 	const loader = document.getElementById('loader');
 	loader.style = 'display: none'
@@ -71,8 +71,14 @@ function hideLoader() {
 
 function showRepos(projects) {
 	hideLoader();
-	const projetos = document.getElementById('project-list');
-	for (let project of projects) {
+
+	const projetosDOM = document.getElementById('project-list');
+
+	const projetosDoSite = projects.filter(project => {
+		return project.topics.some(topic => topic == 'show-on-site');
+	})
+
+	for (let project of projetosDoSite) {
 		const divCard = document.createElement('div');
 		divCard.className = 'card';
 		divCard.id = project.id;
@@ -87,28 +93,20 @@ function showRepos(projects) {
 		cardBody.innerText = project.description;
 		divCard.appendChild(cardBody);
 
-		projetos.appendChild(divCard);
+		projetosDOM.appendChild(divCard);
 
-		fetchRepoTopics(project.name)
-		.then(response => response.json()
-		.then(topics => {
-			showProjectTopics(topics, project.id)
-			configCardFooter(project);
-		}));
-
+		showProjectTopics(project.topics.filter(topic => topic != 'show-on-site'), project.id);
+		configCardFooter(project);
 	}
 }
 
-function showProjectTopics(topics, id) {
+function showProjectTopics(tags, id) {
 	const divCard = document.getElementById(id);
 	const cardTags = document.createElement('div');
 	cardTags.className = 'card-tags';
 	divCard.appendChild(cardTags);
 
-	const tags = topics.names;
-
 	for (let tag of tags) {
-
 		const cardTag = document.createElement('div');
 		cardTag.className = 'tag tag-success searchable';
 		cardTag.innerText = tag;
@@ -133,16 +131,18 @@ function configCardFooter(project) {
 }
 
 function configGithubLink(project) {
-	const cardFooter = document.getElementById('footer-'+project.id);
-	const githubLink = document.createElement('div');
-	githubLink.className = 'link fa fa-github mt-10';
-	githubLink.innerText = '  ver no Github';
-	githubLink.title = 'Clique para ver o repositório no Github'
-	githubLink.addEventListener('click', () => {
-		window.open(project.html_url, '_blank').focus();
-	});
-
-	cardFooter.appendChild(githubLink);
+	if (!project.private) {
+		const cardFooter = document.getElementById('footer-'+project.id);
+		const githubLink = document.createElement('div');
+		githubLink.className = 'link fa fa-github mt-10';
+		githubLink.innerText = '  ver no Github';
+		githubLink.title = 'Clique para ver o repositório no Github'
+		githubLink.addEventListener('click', () => {
+			window.open(project.html_url, '_blank').focus();
+		});
+		cardFooter.appendChild(githubLink);
+	}
+	
 }
 
 function configHomepageLink(project) {
