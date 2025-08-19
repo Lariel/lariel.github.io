@@ -33,11 +33,11 @@ jobs:
       - name: Replace tokens in files
         uses: cschleiden/replace-tokens@v1
         with:
+          tokenPrefix: '{{'
+          tokenSuffix: '}}'
           files: '["js/*.js"]'
-          tokens: |
-            {
-              "API_KEY": "${{ secrets.BEARER_REPOS }}"
-            }
+        env:
+          API_KEY: "${{ secrets.BEARER_REPOS }}"
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
