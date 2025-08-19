@@ -1,7 +1,7 @@
 const gitHeaders = {
 	headers: {
 		'Accept': 'application/vnd.github.mercy-preview+json',
-		'Authorization': 'API_KEY'
+		'Authorization': '{{API_KEY}}'
 	}	
 };
 
